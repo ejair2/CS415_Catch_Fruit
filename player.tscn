@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://3k4ot14scftj"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_uyfeu"]
+[ext_resource type="Texture2D" uid="uid://iycyf6px5sur" path="res://—Pngtree—daily cartoon basket clipart_5805034.png" id="2_vyb4u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wjmvg"]
+size = Vector2(126, 127)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_uyfeu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5, 9.99999)
+scale = Vector2(0.141667, 0.138333)
+texture = ExtResource("2_vyb4u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 4.5)
+shape = SubResource("RectangleShape2D_wjmvg")

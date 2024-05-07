@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://c1gtwjbnkmst7"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_l511f"]
+[ext_resource type="PackedScene" uid="uid://3k4ot14scftj" path="res://player.tscn" id="1_nvi11"]
+[ext_resource type="PackedScene" uid="uid://omqchg0ttah8" path="res://fruit_spawner.tscn" id="2_ksrra"]
+[ext_resource type="Script" path="res://Health.gd" id="3_who0r"]
+[ext_resource type="Script" path="res://Score.gd" id="5_xi6x1"]
+[ext_resource type="Script" path="res://Time.gd" id="6_4d2cn"]
+[ext_resource type="AudioStream" uid="uid://cfke3jklbl0rl" path="res://punch-2-123106.mp3" id="7_28n5a"]
+[ext_resource type="AudioStream" uid="uid://bk41rfgdbfxsq" path="res://sfx_collect.mp3" id="8_68dja"]
+[ext_resource type="AudioStream" uid="uid://bum2k8rfmmlsp" path="res://game-over-arcade-6435.mp3" id="8_ajcmp"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_l511f")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 721.0
+offset_bottom = 965.0
+color = Color(0.376471, 0.376471, 0.376471, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_nvi11")]
+position = Vector2(369, 843)
+
+[node name="FruitSpawner" parent="." instance=ExtResource("2_ksrra")]
+position = Vector2(2, 0)
+
+[node name="Health2" type="Label" parent="."]
+offset_left = 659.0
+offset_top = 14.0
+offset_right = 699.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 20
+script = ExtResource("3_who0r")
+
+[node name="Score" type="Label" parent="."]
+offset_left = 616.0
+offset_top = 44.0
+offset_right = 676.0
+offset_bottom = 72.0
+scale = Vector2(0.960208, 1)
+theme_override_font_sizes/font_size = 20
+script = ExtResource("5_xi6x1")
+
+[node name="Time" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("6_4d2cn")
+
+[node name="sfx_hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_28n5a")
+volume_db = -14.991
+
+[node name="sfx_collect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_68dja")
+volume_db = -13.118
+
+[node name="sfx_gameover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_ajcmp")
+volume_db = -7.975

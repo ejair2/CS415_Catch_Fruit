@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1gtwjbnkmst7"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_l511f"]
+[ext_resource type="PackedScene" uid="uid://3k4ot14scftj" path="res://player.tscn" id="1_nvi11"]
+[ext_resource type="PackedScene" uid="uid://omqchg0ttah8" path="res://fruit_spawner.tscn" id="2_ksrra"]
+[ext_resource type="Script" path="res://Health.gd" id="3_who0r"]
+[ext_resource type="Script" path="res://Score.gd" id="5_xi6x1"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_l511f")
+
+[node name="Player" parent="." instance=ExtResource("1_nvi11")]
+position = Vector2(594, 517)
+
+[node name="FruitSpawner" parent="." instance=ExtResource("2_ksrra")]
+
+[node name="Health2" type="Label" parent="."]
+offset_left = 1056.0
+offset_top = 25.0
+offset_right = 1096.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 20
+script = ExtResource("3_who0r")
+
+[node name="Score" type="Label" parent="."]
+offset_left = 980.0
+offset_top = 20.0
+offset_right = 1020.0
+offset_bottom = 43.0
+script = ExtResource("5_xi6x1")
